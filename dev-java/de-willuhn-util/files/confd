@@ -1,0 +1,5 @@
+SECRETFILE="/etc/jameica/secret"
+BASEDIR="/opt/jameica"
+WORKDIR="/var/lib/jameica"
+PIDFILE="/var/run/jameica.pid"
+LOCKFILE="/var/lock/jameica.lock"
