@@ -1,0 +1,7 @@
+5
+Fri Jun 26 10:24:46 2009  arcconf 
+Fri Jun 26 10:25:02 2009  arcconf GETCONFIG 
+Fri Jun 26 10:25:10 2009  arcconf GETCONFIG AL 
+Fri Jun 26 10:25:10 2009  Status: invalid arguments, ReturnCode: 0x3
+Fri Jun 26 10:25:20 2009  arcconf GETCONFIG 1 
+Fri Jun 26 10:25:20 2009  Status: success, ReturnCode: 0x0
