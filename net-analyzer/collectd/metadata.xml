@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+
+<pkgmetadata>
+	<herd>no-herd</herd>
+	<maintainer>
+		<name>Boian Berberov</name>
+		<email>bberberov+launchpad@gmail.com</email>
+	</maintainer>
+	<longdescription lang='en'>
+	collectd is a small daemon which collects system performance statistics periodically and provides mechanisms to store the values in a variety of ways, for example in RRD-files.
+	</longdescription>
+	<use lang='en'>
+		<flag name='collectd_plugins_apache'>Enables the apache plug-in</flag>
+		<flag name='collectd_plugins_apcups'>Enables the apcups plug-in</flag>
+		<flag name='collectd_plugins_apple_sensors'>Enables the apple_sensors plug-in</flag>
+		<flag name='collectd_plugins_ascent'>Enables the ascent plug-in</flag>
+		<flag name='collectd_plugins_battery'>Enables the battery plug-in</flag>
+		<flag name='collectd_plugins_cpu'>Enables the cpu plug-in</flag>
+		<flag name='collectd_plugins_cpufreq'>Enables the cpufreq plug-in</flag>
+		<flag name='collectd_plugins_csv'>Enables the csv plug-in</flag>
+		<flag name='collectd_plugins_df'>Enables the df plug-in</flag>
+		<flag name='collectd_plugins_disk'>Enables the disk plug-in</flag>
+		<flag name='collectd_plugins_dns'>Enables the dns plug-in</flag>
+		<flag name='collectd_plugins_email'>Enables the email plug-in</flag>
+		<flag name='collectd_plugins_entropy'>Enables the entropy plug-in</flag>
+		<flag name='collectd_plugins_filecount'>Enables the filecount plug-in</flag>
+		<flag name='collectd_plugins_hddtemp'>Enables the hddtemp plug-in</flag>
+		<flag name='collectd_plugins_interface'>Enables the interface plug-in</flag>
+		<flag name='collectd_plugins_iptables'>Enables the iptables plug-in</flag>
+		<flag name='collectd_plugins_ipmi'>Enables the ipmi plug-in</flag>
+		<flag name='collectd_plugins_ipvs'>Enables the ipvs plug-in</flag>
+		<flag name='collectd_plugins_irq'>Enables the irq plug-in</flag>
+		<flag name='collectd_plugins_libvirt'>Enables the libvirt plug-in</flag>
+		<flag name='collectd_plugins_load'>Enables the load plug-in</flag>
+		<flag name='collectd_plugins_logfile'>Enables the logfile plug-in</flag>
+		<flag name='collectd_plugins_mbmon'>Enables the mbmon plug-in</flag>
+		<flag name='collectd_plugins_memcached'>Enables the memcached plug-in</flag>
+		<flag name='collectd_plugins_memory'>Enables the memory plug-in</flag>
+		<flag name='collectd_plugins_multimeter'>Enables the multimeter plug-in</flag>
+		<flag name='collectd_plugins_mysql'>Enables the mysql plug-in</flag>
+		<flag name='collectd_plugins_netlink'>Enables the netlink plug-in</flag>
+		<flag name='collectd_plugins_network'>Enables the network plug-in</flag>
+		<flag name='collectd_plugins_nfs'>Enables the nfs plug-in</flag>
+		<flag name='collectd_plugins_nginx'>Enables the nginx plug-in</flag>
+		<flag name='collectd_plugins_notify_desktop'>Enables the notify_desktop plug-in</flag>
+		<flag name='collectd_plugins_notify_email'>Enables the notify_email plug-in</flag>
+		<flag name='collectd_plugins_ntpd'>Enables the ntpd plug-in</flag>
+		<flag name='collectd_plugins_nut'>Enables the nut plug-in</flag>
+		<flag name='collectd_plugins_onewire'>Enables the onewire plug-in</flag>
+		<flag name='collectd_plugins_perl'>Enables the perl plug-in</flag>
+		<flag name='collectd_plugins_ping'>Enables the ping plug-in</flag>
+		<flag name='collectd_plugins_postgresql'>Enables the postgresql plug-in</flag>
+		<flag name='collectd_plugins_powerdns'>Enables the powerdns plug-in</flag>
+		<flag name='collectd_plugins_processes'>Enables the processes plug-in</flag>
+		<flag name='collectd_plugins_rrdtool'>Enables the rrdtool plug-in</flag>
+		<flag name='collectd_plugins_sensors'>Enables the sensors plug-in</flag>
+		<flag name='collectd_plugins_serial'>Enables the serial plug-in</flag>
+		<flag name='collectd_plugins_snmp'>Enables the snmp plug-in</flag>
+		<flag name='collectd_plugins_swap'>Enables the swap plug-in</flag>
+		<flag name='collectd_plugins_syslog'>Enables the syslog plug-in</flag>
+		<flag name='collectd_plugins_tail'>Enables the tail plug-in</flag>
+		<flag name='collectd_plugins_tcpconns'>Enables the tcpconns plug-in</flag>
+		<flag name='collectd_plugins_teamspeak2'>Enables the teamspeak2 plug-in</flag>
+		<flag name='collectd_plugins_thermal'>Enables the thermal plug-in</flag>
+		<flag name='collectd_plugins_unixsock'>Enables the unixsock plug-in</flag>
+		<flag name='collectd_plugins_users'>Enables the users plug-in</flag>
+		<flag name='collectd_plugins_uuid'>Enables the uuid plug-in</flag>
+		<flag name='collectd_plugins_vmem'>Enables the vmem plug-in</flag>
+		<flag name='collectd_plugins_vserver'>Enables the vserver plug-in</flag>
+		<flag name='collectd_plugins_wireless'>Enables the wireless plug-in</flag>
+	</use>
+	<upstream>
+		<changelog>http://git.verplant.org/?p=collectd.git;a=log</changelog>
+		<doc lang='en'>http://collectd.org/documentation.shtml</doc>
+		<bugs-to>http://collectd.org/mantis/</bugs-to>
+	</upstream>
+</pkgmetadata>
