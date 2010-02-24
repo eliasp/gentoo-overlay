@@ -83,7 +83,8 @@ pkg_config() {
 	if ! pquery "SELECT usename FROM pg_user WHERE usename = '${OPENERP_USER}'" | grep -q ${OPENERP_USER}; then
 		openerp-server -s --config=/etc/openerp/oerp_serverrc --stop-after-init
 		ebegin "Creating database user ${OPENERP_USER}"
-		createuser --quiet --username=postgres --createdb ${OPENERP_USER} --no-createrole
+		createuser --username=postgres --createdb ${OPENERP_USER} \
+		--no-createrole --no-superuser --no-createdb
 		eend $? || die "Failed to create database user"
 	fi
 }
