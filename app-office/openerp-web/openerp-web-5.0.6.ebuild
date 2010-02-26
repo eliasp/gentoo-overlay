@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-S=${P}${REV}
+S=${P/web/client-web}${REV}
 
 DEPEND="
 	>=dev-python/pyparsing-1.5.0
@@ -29,22 +29,21 @@ DEPEND="
 	>=dev-python/beaker-1.1
 	"
 
-src_compile() {                                                                                                                                                                                           
-        return                                                                                                                                                                                            
-}                                                                                                                                                                                                 
-                                                                                                                                                                                                          
-src_install() {                                                                                                                                                                                           
-        cd ${S}                                                                                                                                                                                           
+src_compile() {
+	return
+}
 
+src_install() {
+	cd ${S}
 	distutils_src_install
 
 	newinitd "${FILESDIR}"/openerp-web-init.d openerp-web
 	newconfd "${FILESDIR}"/openerp-web-conf.d openerp-web
 
-        keepdir /var/run/openerp
-        keepdir /var/log/openerp
+	keepdir /var/run/openerp
+	keepdir /var/log/openerp
 
-        insinto /etc/openerp
+	insinto /etc/openerp
 	rm -rf ${D}/usr/scripts
 	mv ${D}/usr/config/openerp-web.cfg ${D}/etc/openerp/openerp-web.cfg
 	rm -rf ${D}/usr/config
