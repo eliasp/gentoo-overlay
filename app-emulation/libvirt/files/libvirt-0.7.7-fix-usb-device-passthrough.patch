@@ -1,20 +1,7 @@
-From: Cole Robinson <crobinso@redhat.com>
-Date: Fri, 12 Mar 2010 17:37:52 +0000 (-0500)
-Subject: qemu: Fix USB by product with security enabled
-X-Git-Url: http://libvirt.org/git/?p=libvirt.git;a=commitdiff_plain;h=6d5c8a8f51db8ce97ab35ab6022dd5c94ab016b4
-
-qemu: Fix USB by product with security enabled
-
-We need to call PrepareHostdevs to determine the USB device path before
-any security calls. PrepareHostUSBDevices was also incorrectly skipping
-all USB devices.
----
-
-diff --git a/src/qemu/qemu_driver.c b/src/qemu/qemu_driver.c
-index 040d645..b17d26d 100644
---- a/src/qemu/qemu_driver.c
-+++ b/src/qemu/qemu_driver.c
-@@ -2360,7 +2360,7 @@ qemuPrepareHostUSBDevices(struct qemud_driver *driver ATTRIBUTE_UNUSED,
+diff -ruN libvirt-0.7.7.orig/src/qemu/qemu_driver.c libvirt-0.7.7/src/qemu/qemu_driver.c
+--- libvirt-0.7.7.orig/src/qemu/qemu_driver.c	2010-03-05 16:45:23.000000000 +0100
++++ libvirt-0.7.7/src/qemu/qemu_driver.c	2010-03-26 17:20:50.000000000 +0100
+@@ -2360,7 +2360,7 @@
  
          if (hostdev->mode != VIR_DOMAIN_HOSTDEV_MODE_SUBSYS)
              continue;
@@ -23,7 +10,7 @@ index 040d645..b17d26d 100644
              continue;
  
          /* Resolve a vendor/product to bus/device */
-@@ -2703,6 +2703,11 @@ static int qemudStartVMDaemon(virConnectPtr conn,
+@@ -2701,6 +2701,11 @@
          return -1;
      }
  
@@ -34,15 +21,4 @@ index 040d645..b17d26d 100644
 +
      /* If you are using a SecurityDriver with dynamic labelling,
         then generate a security label for isolation */
-     DEBUG0("Generating domain security label (if required)");
-@@ -2769,10 +2774,6 @@ static int qemudStartVMDaemon(virConnectPtr conn,
-     if (qemuSetupCgroup(driver, vm) < 0)
-         goto cleanup;
- 
--    DEBUG0("Preparing host devices");
--    if (qemuPrepareHostDevices(driver, vm->def) < 0)
--        goto cleanup;
--
-     if (VIR_ALLOC(priv->monConfig) < 0) {
-         virReportOOMError();
-         goto cleanup;
+     if (driver->securityDriver &&
