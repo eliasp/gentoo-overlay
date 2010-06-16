@@ -1,16 +1,22 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/otrs/otrs-2.3.3.ebuild,v 1.2 2009/05/26 17:08:02 arfrever Exp $
+# $Header:$
 
-inherit webapp eutils depend.apache
+if use singleinstance;
+then
+	inherit webapp eutils depend.apache
+else
+	inherit eutils depend.apache
+	SLOT=0
+fi
 
 DESCRIPTION="OTRS is an Open source Ticket Request System"
 HOMEPAGE="http://otrs.org/"
 SRC_URI="ftp://ftp.otrs.org/pub/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="mysql postgres fastcgi ldap gd pdf"
+KEYWORDS="amd64 ~ppc ~ppc64 ~x86"
+IUSE="mysql postgres fastcgi ldap gd pdf singleinstance"
 
 RDEPEND="${DEPEND}
 	virtual/mta
@@ -18,7 +24,6 @@ RDEPEND="${DEPEND}
 	dev-perl/Authen-SASL
 	dev-perl/Crypt-PasswdMD5
 	dev-perl/DBI
-	dev-perl/Text-CSV
 	dev-perl/Date-Pcalc
 	dev-perl/IO-stringy
 	dev-perl/MIME-tools
@@ -34,7 +39,7 @@ RDEPEND="${DEPEND}
 	apache2? ( =www-apache/libapreq2-2* )
 	fastcgi? ( dev-perl/FCGI )
 	gd? ( dev-perl/GD dev-perl/GDTextUtil dev-perl/GDGraph )
-	ldap? ( dev-perl/perl-ldap net-nds/openldap )
+	ldap? ( dev-perl/perl-ldap )
 	mysql? ( >=dev-perl/DBD-mysql-3.0005 )
 	pdf? ( dev-perl/PDF-API2 )
 	postgres? ( dev-perl/DBD-Pg )
