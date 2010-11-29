@@ -42,7 +42,4 @@ src_configure() {
 
 src_install() {
 	qt4-r2_src_install
-	newicon src/images/${PN}-128.png ${PN}.png || die "Cannot install icon"
-	make_desktop_entry ${PN} KtikZ ${PN} Graphics \
-		|| die "Cannot create desktop entry"
 }
