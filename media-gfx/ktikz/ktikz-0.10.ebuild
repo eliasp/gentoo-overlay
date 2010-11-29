@@ -26,15 +26,18 @@ DOCS="Changelog TODO"
 S="${WORKDIR}"/"${PN}"
 
 src_prepare() {
+	ls -l
 	# don't install desktop icon (and cause sandbox violation)
-	sed -i -e '72,79d' src/src.pro || die "sed failed"
+	#sed -i -e '72,79d' src/src.pro || die "sed failed"
 	# ... and libs are not equal ldflags, make that sure:
 	sed -i -e 's|QMAKE_LFLAGS|LIBS|' macros.pri || die "sed failed"
+	# use the correct lrelease command
+	sed -i -e 's|lrelease-qt4|lrelease|' conf.pri || die "sed failed"
 }
 
 src_configure() {
 	KDECONFIG="CONFIG-=usekde"
-	eqmake4 ${PN}.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
+	eqmake4 qtikz.pro PREFIX="${D}/usr" "CONFIG+=nostrip" "$KDECONFIG"
 }
 
 src_install() {
