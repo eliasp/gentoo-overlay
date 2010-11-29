@@ -6,7 +6,7 @@ EAPI="2"
 
 inherit eutils qt4-r2
 MY_P=${P/-/_}
-DESCRIPTION="A QT4-based editor for the TikZ language"
+DESCRIPTION="A Qt4-based editor for the TikZ language"
 HOMEPAGE="http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language"
 SRC_URI="http://www.hackenberger.at/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
