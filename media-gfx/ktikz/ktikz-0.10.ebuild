@@ -23,6 +23,8 @@ RDEPEND="${DEPEND}"
 
 DOCS="Changelog TODO"
 
+S="${WORKDIR}"/"${PN}"
+
 src_prepare() {
 	# don't install desktop icon (and cause sandbox violation)
 	sed -i -e '72,79d' src/src.pro || die "sed failed"
