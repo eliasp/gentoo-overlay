@@ -1,3 +1,0 @@
-# Configuration file for Adaptec Storage Agent init script
-# Where is your JAVA_HOME ?
-JAVAHOME=`java-config --jre-home`
