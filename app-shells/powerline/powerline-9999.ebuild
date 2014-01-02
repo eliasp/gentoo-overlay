@@ -15,7 +15,7 @@ EGIT_PROJECT="powerline"
 EGIT_BRANCH="develop"
 
 LICENSE="MIT"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 IUSE=""
 
 VIM_PLUGIN_HELPFILES="Powerline.txt"
