@@ -8,8 +8,7 @@ inherit latex-package
 
 DESCRIPTION="Support for automation of the LaTeX workflow."
 HOMEPAGE="http://www.ctan.org/tex-archive/macros/latex/contrib/logreq/"
-# SRC_URI="http://www.ctan.org/tex-archive/macros/latex/contrib/logreq/*"
-SRC_URI="mirror://gentoo/${P}.zip"
+SRC_URI="http://www.ctan.org/tex-archive/macros/latex/contrib/logreq/${PN}.zip -> ${P}.zip"
 S="${WORKDIR}/${PN}"
 
 LICENSE="LPPL-1.3"
