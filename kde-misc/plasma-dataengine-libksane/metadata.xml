@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>mail@eliasprobst.eu</email>
+		<name>Elias Probst</name>
+		<description>This project aims to enable easy access to SANE scanners in KDE Plasma via a dataengine and an applet which provides configurable functions like Scan to PDF or Copy to Printer.</description>
+	</maintainer>
+</pkgmetadata>
