@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/Lokaltog/powerline.git"
 EGIT_PROJECT="powerline"
 EGIT_BRANCH="develop"
 
-LICENSE="ccs"
+LICENSE="MIT"
 KEYWORDS="amd64"
 IUSE=""
 
