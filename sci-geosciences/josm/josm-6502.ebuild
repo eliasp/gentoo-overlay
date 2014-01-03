@@ -13,6 +13,11 @@ unset SUBVERSION_ECLASS
 
 DESCRIPTION="Java-based editor for the OpenStreetMap project"
 HOMEPAGE="http://josm.openstreetmap.de/"
+# Upstream doesn't provide versioned tarballs, so we'll have to create one on our own:
+# REVISION=6502
+# mkdir -p josm-${REVISION}
+# svn co -r ${REVISION} http://josm.openstreetmap.de/svn/trunk/ josm-${REVISION}
+# tar -c --xz -f /usr/portage/distfiles/josm-${REVISION}.tar.xz josm-${REVISION}
 [[ ${PV} == "9999" ]] || SRC_URI="http://eliasprobst.eu/mirror/gentoo/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2"
