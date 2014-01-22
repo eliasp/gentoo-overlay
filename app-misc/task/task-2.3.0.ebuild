@@ -24,10 +24,13 @@ src_prepare() {
 
 	# don't automatically install scripts
 	sed -i -e '/scripts/d' CMakeLists.txt || die
+
+	epatch "${FILESDIR}"/${PN}-2.3.0-issue-1473-rcdir-fix.patch
 }
 
 src_configure() {
 	mycmakeargs=(
+		-DTASK_RCDIR=share/${PN}/rc
 		-DTASK_DOCDIR=share/doc/${PF}
 	)
 	cmake-utils_src_configure
