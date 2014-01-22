@@ -28,7 +28,7 @@ src_prepare() {
 
 src_configure() {
 	mycmakeargs=(
-		-DTASK_DOCDIR="${EPREFIX}"/usr/share/doc/${PF}
+		-DTASK_DOCDIR=share/doc/${PF}
 	)
 	cmake-utils_src_configure
 }
