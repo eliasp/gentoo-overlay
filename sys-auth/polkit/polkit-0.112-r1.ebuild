@@ -55,6 +55,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch_user || die "Failed to apply user patches"
 	sed -i -e 's|unix-group:wheel|unix-user:0|' src/polkitbackend/*-default.rules || die #401513
 }
 
