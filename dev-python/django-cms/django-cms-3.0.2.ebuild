@@ -26,22 +26,27 @@ RDEPEND="
 	dev-python/html5lib
 	dev-python/djangocms-admin-style
 	>=dev-python/djangocms-text-ckeditor-2.1.1
+	<dev-python/django-reversion-1.8.1
 "
+# django-reversion is fixed to =1.6.6, see: https://github.com/divio/django-cms/issues/3211
+
 DEPEND="
 	${RDEPEND}
 	dev-python/setuptools
 	test? (
-		>=TODO/django-reversion-1.6.6
-		=TODO/Pillow-1.7.7
-		=TODO/Sphinx-1.1.3
-		=TODO/Jinja2-2.6
-		=TODO/Pygments-1.5
-		=TODO/dj-database-url-0.2.1
-		TODO/django-hvad
+		<dev-python/django-reversion-1.8.1
+		>=dev-python/jinja-2.6
+		>=dev-python/pygments-1.5
 		>=dev-python/djangocms-text-ckeditor-2.1.1
-		TODO/djangocms-column
-		TODO/djangocms-style
 	)
 "
+#	test? (
+#		# TODO: dev-python/djangocms-column
+#		# TODO: dev-python/djangocms-style
+#		# TODO: =dev-python/pillow-1.7.7
+#		# TODO =dev-python/Sphinx-1.1.3
+#		# TODO =dev-python/dj-database-url-0.2.1
+#		# TODO: dev-python/django-hvad
+#	)
 
 #DOCS="AUTHORS CHANGELOG.txt README.rst CONTRIBUTING.rst"
