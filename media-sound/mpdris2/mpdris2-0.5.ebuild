@@ -30,7 +30,6 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}/python2.patch"
-	epatch "${FILESDIR}/${PV}-desktop.patch"
 	epatch "${FILESDIR}/lastfm_coverfetcher.patch"
 	epatch "${FILESDIR}/mpd_wrapper.patch"
 	epatch "${FILESDIR}/noidle.patch"
