@@ -42,12 +42,7 @@ DEPEND="
 	${COMMON_DEPEND}
 	doc? ( dev-python/sphinx dev-python/docutils )
 	test? (
-		python_targets_python2_6? ( virtual/python-unittest2 )
 		|| ( >=dev-vcs/git-1.7.2 >=dev-python/pygit2-0.17 )
-		python_targets_python2_6? (
-			dev-vcs/mercurial
-			dev-vcs/bzr
-		)
 		python_targets_python2_7? (
 			dev-vcs/mercurial
 			dev-vcs/bzr
