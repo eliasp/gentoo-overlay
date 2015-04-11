@@ -1,37 +1,39 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/task/task-2.4.1.ebuild,v 1.1 2015/02/20 03:42:48 radhermit Exp $
 
 EAPI=5
 
 inherit eutils cmake-utils bash-completion-r1
 
 DESCRIPTION="Taskwarrior is a command-line todo list manager"
-HOMEPAGE="http://taskwarrior.org/projects/show/taskwarrior/"
+HOMEPAGE="http://taskwarrior.org/"
 SRC_URI="http://taskwarrior.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86 ~x64-macos"
-IUSE="vim-syntax zsh-completion"
+IUSE="gnutls vim-syntax zsh-completion"
+
+DEPEND="sys-libs/readline
+	gnutls? ( net-libs/gnutls )
+	elibc_glibc? ( sys-apps/util-linux )"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	# use the correct directory locations
-	sed -i -e "s:/usr/local/share/doc/task/rc:${EPREFIX}/usr/share/task/rc:" \
-		doc/man/taskrc.5.in doc/man/task-tutorial.5.in doc/man/task-color.5.in || die
-	sed -i -e "s:/usr/local/bin:${EPREFIX}/usr/bin:" \
-		doc/man/task-faq.5.in scripts/add-ons/* || die
+	sed -i "s:/usr/local/bin:${EPREFIX}/usr/bin:" \
+		scripts/add-ons/* || die
 
 	# don't automatically install scripts
-	sed -i -e '/scripts/d' CMakeLists.txt || die
-
-	epatch "${FILESDIR}"/${PN}-2.3.0-issue-1473-rcdir-fix.patch
+	sed -i '/scripts/d' CMakeLists.txt || die
 }
 
 src_configure() {
 	mycmakeargs=(
-		-DTASK_RCDIR=share/${PN}/rc
+		$(cmake-utils_use_use gnutls GNUTLS)
 		-DTASK_DOCDIR=share/doc/${PF}
+		-DTASK_RCDIR=share/${PN}/rc
 	)
 	cmake-utils_src_configure
 }
