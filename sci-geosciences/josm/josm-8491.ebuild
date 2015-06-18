@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://josm.openstreetmap.de/"
 # REVISION=6502
 # mkdir -p josm-${REVISION}
 # svn co -r ${REVISION} http://josm.openstreetmap.de/svn/trunk/ josm-${REVISION}
-# tar -c --xz -f /usr/portage/distfiles/josm-${REVISION}.tar.xz josm-${REVISION}
+# tar -c --xz -f $(portageq distdir)/josm-${REVISION}.tar.xz josm-${REVISION}
 [[ ${PV} == "9999" ]] || SRC_URI="http://eliasprobst.eu/mirror/gentoo/distfiles/${P}.tar.xz"
 
 LICENSE="GPL-2"
@@ -29,8 +29,6 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=virtual/jdk-1.7"
 RDEPEND=">=virtual/jre-1.7"
-
-S="${WORKDIR}/${P}"
 
 IUSE=""
 
